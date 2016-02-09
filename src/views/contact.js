@@ -9,4 +9,6 @@ class ContactEntry extends LayoutView {
   }
 }
 
+alert('foo');
+
 export default ContactEntry;
