@@ -1,4 +1,6 @@
-/* global Marionette, _ */
+import _ from 'underscore';
+import Marionette from 'backbone.marionette';
+
 import ContactList from './list';
 import ContactEntry from './contact';
 

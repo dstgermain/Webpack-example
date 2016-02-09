@@ -1,6 +1,6 @@
-/* global Marionette, Backbone */
-'use strict';
 require('./scss/app.scss');
+
+import Marionette from 'backbone.marionette';
 
 import Router from './router';
 

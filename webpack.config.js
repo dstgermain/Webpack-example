@@ -7,10 +7,12 @@ const dirDist = path.resolve(__dirname, 'dist');
 //const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: [path.resolve(dirSrc, 'app.js')],
+  entry: {
+    app: path.resolve(dirSrc, 'app.js')
+  },
   output: {
     path: dirDist,
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
   module: {
     loaders: [

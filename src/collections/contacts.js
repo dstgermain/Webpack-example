@@ -1,4 +1,5 @@
 /* global Backbone */
+
 import Contact from '../models/contact';
 
 class Contacts extends Backbone.Collection {

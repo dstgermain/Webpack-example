@@ -1,4 +1,4 @@
-/* global Marionette */
+import Marionette from 'backbone.marionette';
 
 import Contacts from '../collections/contacts';
 import LayoutView from '../views/layout';

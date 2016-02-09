@@ -1,4 +1,5 @@
-/* global Marionette */
+import Marionette from 'backbone.marionette';
+
 import IndexController from './controllers/indexController';
 
 const Router = Marionette.AppRouter.extend({

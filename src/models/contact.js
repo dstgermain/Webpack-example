@@ -1,4 +1,5 @@
 /* global Backbone */
+
 class Contact extends Backbone.Model {
   constructor(...rest) {
     super(...rest);

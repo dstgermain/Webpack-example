@@ -1,4 +1,5 @@
-/* global Marionette, _ */
+import _ from 'underscore';
+import Marionette from 'backbone.marionette';
 
 class Entry extends Marionette.ItemView {
   constructor(...rest) {
