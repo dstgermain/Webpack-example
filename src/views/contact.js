@@ -1,7 +1,7 @@
 import _ from 'underscore';
-import Marionette from 'backbone.marionette';
+import { LayoutView } from 'backbone.marionette';
 
-class ContactEntry extends Marionette.LayoutView {
+class ContactEntry extends LayoutView {
   constructor(...rest) {
     super(...rest);
     this.template = _.template(require('../templates/contact.html'));

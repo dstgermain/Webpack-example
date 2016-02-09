@@ -1,8 +1,8 @@
-import Marionette from 'backbone.marionette';
+import { AppRouter } from 'backbone.marionette';
 
 import IndexController from './controllers/indexController';
 
-const Router = Marionette.AppRouter.extend({
+const Router = AppRouter.extend({
   appRoutes: {
     '': 'contactList',
     'contact/:id': 'contactEntry'

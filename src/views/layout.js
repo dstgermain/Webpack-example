@@ -1,10 +1,10 @@
 import _ from 'underscore';
-import Marionette from 'backbone.marionette';
+import { LayoutView } from 'backbone.marionette';
 
 import ContactList from './list';
 import ContactEntry from './contact';
 
-class LayoutView extends Marionette.LayoutView {
+class Layout extends LayoutView {
   constructor(...rest) {
     super(...rest);
     rest.forEach(function (item) {
@@ -55,4 +55,4 @@ class LayoutView extends Marionette.LayoutView {
   }
 }
 
-export default LayoutView;
+export default Layout;

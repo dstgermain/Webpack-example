@@ -1,7 +1,7 @@
 import _ from 'underscore';
-import Marionette from 'backbone.marionette';
+import { ItemView, CompositeView } from 'backbone.marionette';
 
-class Entry extends Marionette.ItemView {
+class Entry extends ItemView {
   constructor(...rest) {
     super(...rest);
     this.template = _.template(require('../templates/item.html'));
@@ -14,7 +14,7 @@ class Entry extends Marionette.ItemView {
   }
 }
 
-class ContactList extends Marionette.CompositeView {
+class ContactList extends CompositeView {
   constructor(...rest) {
     super(...rest);
     this.template = _.template('<table><thead>' +

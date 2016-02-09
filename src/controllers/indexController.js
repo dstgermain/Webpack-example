@@ -1,11 +1,11 @@
-import Marionette from 'backbone.marionette';
+import { Controller, RegionManager } from 'backbone.marionette';
 
 import Contacts from '../collections/contacts';
 import LayoutView from '../views/layout';
 
-class IndexController extends Marionette.Controller {
+class IndexController extends Controller {
   initialize() {
-    this.options.regionManager = new Marionette.RegionManager({
+    this.options.regionManager = new RegionManager({
       regions: {
         main: '#app-hook'
       },
