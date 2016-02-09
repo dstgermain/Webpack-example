@@ -1,10 +1,21 @@
 /* global __dirname */
-
 const path = require('path');
 const webpack = require('webpack');
 const dirSrc = path.resolve(__dirname, 'src');
 const dirDist = path.resolve(__dirname, 'dist');
-//const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const dynamicCssLoader = process.env.NODE_ENV !== 'production' ? 'style-loader!' +
+           'css-loader!autoprefixer-loader?{browsers:["last 2 version", "ie 10"]}!' +
+           'sass-loader?outputStyle=expanded' : ExtractTextPlugin.extract(
+           'style',
+           'css!autoprefixer?{browsers:["last 2 version", "ie 10"]}!' +
+           'sass?outputStyle=expanded');
+const dynamicPluginLoader = process.env.NODE_ENV !== 'production' ? [
+  new webpack.NoErrorsPlugin()
+] : [
+  new webpack.NoErrorsPlugin(),
+  new ExtractTextPlugin('app.css')
+];
 
 module.exports = {
   entry: {
@@ -30,23 +41,11 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!' +
-           'css-loader!autoprefixer-loader?{browsers:["last 2 version", "ie 10"]}!' +
-           'sass-loader?outputStyle=expanded'
+        loader: dynamicCssLoader
       }
-      // {
-      //   test: /\.scss$/,
-      //   loader: ExtractTextPlugin.extract(
-      //      'style',
-      //      'css!autoprefixer?{browsers:["last 2 version", "ie 10"]}!' +
-      //      'sass?outputStyle=expanded')
-      // }
     ]
   },
-  plugins: [
-    new webpack.NoErrorsPlugin(),
-    //new ExtractTextPlugin('app.css')
-  ],
+  plugins: dynamicPluginLoader,
   stats: {
     // Nice colored output
     colors: true
