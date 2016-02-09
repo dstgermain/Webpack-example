@@ -49,8 +49,6 @@ class Layout extends LayoutView {
     const entry = new ContactEntry({ model });
     this.showChildView('layout', entry);
 
-    console.log(model);
-
     Backbone.history.navigate(`contact/${model.id}`);
   }
 }
