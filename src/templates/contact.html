@@ -1,0 +1,20 @@
+<h2><%- first_name + ' ' + last_name %></h2>
+<ul>
+    <li><span>Status</span><%- status %></li>
+    <li><span>Confirmed</span><%- confirmed %></li>
+    <li><span>Email Addresses</span>
+        <ul>
+            <% _.each( email_addresses, function( emailAddress ){ %>
+            <li>
+                <%- emailAddress.email_address %>
+            </li>
+            <% }); %>
+        </ul>
+    </li>
+    <li><span>Company Name</span><%- company_name %></li>
+    <li><span>Home Phone</span><%- home_phone %></li>
+    <li><span>Work Phone</span><%- work_phone %></li>
+    <li><span>Cell Phone</span><%- cell_phone %></li>
+    <li><a href="#" class="back">&leftarrow; Contact List</a></li>
+</ul>
+
