@@ -22,11 +22,12 @@ const dynamicPluginLoader = process.env.NODE_ENV !== 'production' ? [
 
 module.exports = {
   entry: {
-    app: path.resolve(dirSrc, 'app.js')
+    app: [path.resolve(dirSrc, 'app.js'), 'webpack/hot/dev-server']
   },
   output: {
     path: dirDist,
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: '/'
   },
   module: {
     loaders: [

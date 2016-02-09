@@ -8,8 +8,7 @@ class IndexController extends Controller {
     this.options.regionManager = new RegionManager({
       regions: {
         main: '#app-hook'
-      },
-      replaceElement: true
+      }
     });
 
     const initialData = this.getOption('initialData');
